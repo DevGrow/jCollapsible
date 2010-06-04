@@ -1,0 +1,52 @@
+Plugin Name: jCollapsible
+Author: Monjurul Dolon, http://mdolon.com/
+More Information: http://devgrow.com/simple-threaded-comments-with-jcollapsible/
+
+jCollapisble is a JQuery plugin that takes any nested list (OL or UL 
+that have children) and coverts it into collapsible threads. This is 
+especially useful to create simple threaded comments on a blog or forum 
+without having to modify the backend code. I’ve tried to keep the 
+plugin as simple and bare-bones as possible, so right now there are no 
+fancy slide or fade effects. The only thing required is the plugin JS 
+file itself – CSS and images are completely optional.
+
+The plugin has been tested (and works fine) on Firefox 3, Chrome 5, 
+IE7+, Safari 4 and Opera 10. It should work on older browsers too though 
+the CSS may need to be fiddled with.v
+
+
+USAGE
+======
+
+SliderNav is super easy to use, but first you have to load JQuery, the 
+plugin and the relevant CSS file in order to use it:
+
+  <script type="text/javascript" src="jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="jCollapsible.min.js"></script>
+  <script type='text/javascript'> 
+    $(document).ready(function(){
+	$('#example').collapsible({xoffset:'-10',yoffset:'5',defaulthide: false});
+    });
+  </script>
+
+Simple enough - just include JQuery (1.3.2 and up), the jCollapsible 
+file and then call the function with your settings.
+
+
+CUSTOM OPTIONS
+==============
+
+While I did try to keep the plugin lightweight, I also wanted to make it 
+somewhat extensible by adding a few different options, including:
+
+    * defaulthide	hide all children by default (default: true)
+    * symbolhide	symbol to hide child elements (default: -)
+    * symbolshow	symbol to show child elements (default: +)
+    * imagehide		image to hide child elements (default: null)
+    * imageshow		image to show child elements (default: null)
+    * xoffset		amount pixels to move symbol/image horizontally (default: -15)
+    * yoffset		amount pixels to move symbol/image vertically (default: 0)
+
+Please note that the image values are null by default (using symbol 
+instead) and the offset values are there to fine-tune the location of 
+the image/symbol.

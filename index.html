@@ -1,0 +1,231 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+ \\==\\   jCollapsible - JQuery plugin that transforms multi-level lists into collapsible threads
+ //==// 
+-->
+
+<title>Simple Threaded Comments with jCollapsible (JQuery Plugin)</title>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript" src="jcollapsible.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#example').collapsible({xoffset:'-30'});
+		$('#example2').collapsible({xoffset:'-20', defaulthide: false, imagehide: 'arrow-down.png', imageshow: 'arrow-right.png'});
+		$('#example3').collapsible();
+		$('#comments').collapsible({xoffset:'-20',yoffset:'50', imagehide: 'arrow-down.png', imageshow: 'arrow-right.png', defaulthide: false});
+	});
+</script>
+<style>
+	/* The following styles are used only for this page - the actual plugin styles are in slidernav.css */
+	* { margin: 0; padding: 0; }
+	body { padding: 40px; background: #eee; font-family: Verdana, Arial; font-size: 12px; }
+	a { text-decoration: none; }
+	h2, h3 { margin: 0 0 20px; text-shadow: 2px 2px #fff; }
+	h2 { font-size: 28px; }
+	h3 { font-size: 22px; }
+	pre { background: #fff; width: 460px; padding: 10px 20px; border-left: 5px solid #ccc; margin: 0 0 20px; }
+	p { font-size: 18px; line-height: 24px; margin: 0 0 30px; }
+	input { margin: 0; padding: 0; }
+	
+	#content { width: 600px; }
+	
+	ul, ol { padding-left: 20px; line-height: 18px; }
+	.biglist { font-size: 110%; font-weight: bold; background: #fff; padding: 10px 40px; margin: 0; }
+	
+	.jcollapsible { font-size: 125%; font-weight: bold; }
+	
+	#example, #example2, #example3 { width: 120px; float: left; margin-right: 40px; }
+	#example2, #example2 ul { list-style-type: none; }
+	
+	#example3, #example3 ul { list-style: none; }
+	
+	#comments { padding: 0; margin: 0; }
+	#comments li { float: left; padding: 10px 0 0; }
+	.comment { background: #fff; padding: 10px; display: block; overflow: hidden; }
+	.comment-author { float: left; width: 50px; font-size: 10px; text-align: center; margin: 0 10px 10px 0; }
+	.comment-body, .comment-body p { font-size: 12px; line-height: 18px; margin: 0; }
+	
+</style>
+</head>
+<body>
+<div id="content">
+
+	<h2>Simple Threaded Comments with jCollapsible (JQuery Plugin)</h2>
+	<p>This JQuery plugin allows you to create collapsible lists quickly and easily, which is especially useful for threaded (nested) comments or forum posts.</p>
+	<h3>Examples:</h3>
+	<ul id="example">
+		<li>Parent Object 1
+			<ul>
+				<li>Child Object 1</li>
+				<li>Child Object 2</li>
+			</ul>
+		</li>
+		<li>Childless Object</li>
+		<li>Parent Object 2
+			<ul>
+				<li>Child/Parent 1
+					<ul>
+						<li>Grandchild 1</li>
+						<li>Grandchild 2</li>
+					</ul>
+				</li>
+				<li>Child Object 2</li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul id="example2">
+		<li>Parent Object 1
+			<ul>
+				<li>Child Object 1</li>
+				<li>Child Object 2</li>
+			</ul>
+		</li>
+		<li>Childless Object</li>
+		<li>Parent Object 2
+			<ul>
+				<li>Child/Parent 1
+					<ul>
+						<li>Grandchild 1</li>
+						<li>Grandchild 2</li>
+					</ul>
+				</li>
+				<li>Child Object 2</li>
+			</ul>
+		</li>
+	</ul>
+
+	<ol id="example3">
+		<li>Parent Object 1
+			<ul>
+				<li>Child Object 1</li>
+				<li>Child Object 2</li>
+			</ul>
+		</li>
+		<li>Childless Object</li>
+		<li>Parent Object 2
+			<ul>
+				<li>Child/Parent 1
+					<ul>
+						<li>Grandchild 1</li>
+						<li>Grandchild 2</li>
+					</ul>
+				</li>
+				<li>Child Object 2</li>
+			</ul>
+		</li>
+	</ol>
+	<div style="clear:both;"></div>
+	<br /><br />
+	<ul id="comments">
+		<li>
+			<div class="comment">
+				<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+				<div class="comment-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+			<ul class="children">
+				<li>
+					<div class="comment">
+						<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+						<div class="comment-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+						</div>
+					</div>
+					<ul class="children">
+						<li>
+							<div class="comment">
+								<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+								<div class="comment-body">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<div class="comment">
+				<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+				<div class="comment-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="comment">
+				<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+				<div class="comment-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+			<ul class="children">
+				<li>
+					<div class="comment">
+						<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+						<div class="comment-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+						</div>
+					</div>
+					<ul class="children">
+						<li>
+							<div class="comment">
+								<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+								<div class="comment-body">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="comment">
+								<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+								<div class="comment-body">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<div class="comment">
+				<div class="comment-author"><img src="gravatar.gif" /><a href="/">Author</a></div>
+				<div class="comment-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div style="clear:both;"></div>
+	<br /><br /><br />
+	<h3>Usage and Options</h3>
+	<pre><code>$('#mylist').collapsible();</code></pre>
+	<p>There are several customizable options, including:
+	<ol class="biglist">
+		<li>defaulthide - hide all children by default (default: true)</li>
+		<li>symbolhide - symbol to hide child elements (default: -)</li>
+		<li>symbolshow - symbol to show child elements (default: +)</li>
+		<li>imagehide - image to hide child elements (default: null)</li>
+		<li>imageshow - image to show child elements (default: null)</li>
+		<li>xoffset - amount pixels to move symbol/image horizontally (default: -15)</li>
+		<li>yoffset - amount pixels to move symbol/image vertically (default: 0)</li>
+	</ol></p>
+	<h3>License</h3>
+	<p>This plugin is released under the GPL, MIT, BSD and anything else that makes it absolutely free to do whatever you want with it.  If you like, you can link back to the original article or the blog itself, <a href="http://devgrow.com/">DevGrow</a> (it's appreciated but definitely optional).</p>
+</div>
+</body>
+</html>
